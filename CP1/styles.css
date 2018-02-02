@@ -1,0 +1,283 @@
+/* Responsive Menu */
+body {
+  margin-left: 50px;
+  margin-right: 80px;
+  background-image: url("../../CP1/pictures/CreativeProject1/background2.jpg")
+}
+
+/* Grid Box for index.html*/
+.header {
+  grid-area: header;
+  text-align: center;
+}
+
+.rightSide {
+  grid-area: rightSide;
+}
+
+.leftSide {
+  grid-area: leftSide;
+}
+
+.textHome {
+  grid-area: textHome;
+  font-size: 30px;
+}
+
+.footer {
+  grid-area: footer;
+  text-align: center;
+}
+
+.containerIndex {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-areas:
+        "header header"
+        "leftSide rightSide"
+        "textHome textHome"
+        "footer footer";
+    grid-gap: 20px;
+}
+
+/* Grid box for meals and soups.html*/
+.rightTopMS {
+  grid-area: rightTopMS;
+}
+
+.leftTopMS {
+  grid-area: leftTopMS;
+}
+
+.centerBottomMS {
+  grid-area: centerBottomMS;
+}
+
+.textMeals {
+  grid-area: textMeals;
+  text-align: center;
+  font-size: 40px;
+}
+
+.containerMeals {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 0.5fr 1fr 1fr 0.5fr 0.5fr;
+    grid-template-areas:
+        "header header"
+        "leftTopMS rightTopMS"
+        "centerBottomMS rightTopMS"
+        "textMeals textMeals"
+        "footer footer";
+    grid-gap: 20px;
+}
+.header h1 {
+  margin-top: 120px;
+}
+/* Contact page */
+.formContact {
+  grid-area: formContact;
+}
+
+.containerContact {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 0.5fr 4fr 0.5fr;
+    grid-template-areas:
+        "header header"
+        "formContact formContact"
+        "footer footer";
+    grid-gap: 20px;
+}
+
+form {
+  margin: 0 auto;
+  width: 650px;
+  height: 850px;
+  padding: 5em;
+  border: 10px solid #CCC;
+  border-radius: 2em;
+  background-color: white;
+}
+
+label {
+  display: inline-block;
+  width: 650px;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 30px;
+
+}
+
+input {
+  display: inline-block;
+  width: 650px;
+  height: 65px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+textarea{
+  display: block;
+  width: 650px;
+  height: 400px;
+  margin-bottom: 40px;
+}
+
+#contactP {
+  text-align: center;
+  font-size: 24px;
+}
+
+
+/* Responsive menu */
+/* See:
+   https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/
+*/
+
+/*Strip the ul of padding and list styling*/
+
+.header ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
+}
+
+/*Create a horizontal list with spacing*/
+.header li {
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+}
+/*Style for menu links*/
+.header li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    background: #2f3036;
+    text-decoration: none;
+}
+/*Active color*/
+/*Hover state for top level links*/
+.header li:hover a {
+    background: #8b1a1a;
+}
+/*Style for dropdown links*/
+.header li:hover ul a {
+    background: #f3f3f3;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+}
+/*Hover state for dropdown links*/
+.header li:hover ul a:hover {
+  background: #8b1a1a;
+    color: #fff;
+}
+/*Hide dropdown links until they are needed*/
+.header li ul {
+    display: none;
+}
+/*Make dropdown links vertical*/
+.header li ul li {
+    display: block;
+    float: none;
+}
+/*Prevent text wrapping*/
+.header li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+/*Display the dropdown on hover*/
+.header ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+/*Style 'show menu' label button and hide it by default*/
+.header .show-menu {
+    text-decoration: none;
+    color: #fff;
+    background: #FF5035;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+/*Hide checkbox*/
+.header input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+.header input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+/*Responsive Styles*/
+@media screen and (max-width : 760px){
+    body {
+        padding: 0px;
+    }
+
+    .header {
+	height: auto;
+    }
+
+    /* Change grid */ /*change for responsive design*/
+  /*.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+            "header"
+            "main"
+	    "sidebar"
+            "footer";
+	grid-gap: 20px;
+    }*/
+
+    /*Make dropdown links appear inline*/
+    .header ul {
+        position: static;
+        display: none;
+    }
+    /*Create vertical spacing*/
+    .header li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    .header ul li, li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .header .show-menu {
+        display:block;
+    }
+}
+
+/* Grid box for meals */
+.sidebarDish {
+  grid-area: sidebarDish;
+}
+
+.pictureDish{
+  grid-area: pictureDish;
+}
+
+.textDish {
+  grid-area: textDish;
+  text-align: center;
+}
+
+.containerDish {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-areas:
+        "header header"
+        "pictureDish sidebarDish"
+        "textDish textDish"
+        "footer footer";
+    grid-gap: 20px;
+}
