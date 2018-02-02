@@ -13,10 +13,12 @@ body {
 
 .rightSide {
   grid-area: rightSide;
+  text-align: center;
 }
 
 .leftSide {
   grid-area: leftSide;
+  text-align: center;
 }
 
 .textHome {
@@ -32,7 +34,7 @@ body {
 .containerIndex {
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 0.3fr 0.3fr;
     grid-template-areas:
         "header header"
         "leftSide rightSide"
@@ -41,9 +43,16 @@ body {
     grid-gap: 20px;
 }
 
+.containerIndex img {
+  width: 75%;
+  height: auto;
+}
+
 /* Grid box for meals and soups.html*/
 .rightTopMS {
   grid-area: rightTopMS;
+  justify-self: center;
+  align-self: center;
 }
 
 .leftTopMS {
@@ -56,14 +65,17 @@ body {
 
 .textMeals {
   grid-area: textMeals;
+  font-size: 25px;
+}
+
+.textMeals h2 {
   text-align: center;
-  font-size: 40px;
 }
 
 .containerMeals {
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: 0.5fr 1fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 0.75fr 1fr 0.2fr 0.2fr;
     grid-template-areas:
         "header header"
         "leftTopMS rightTopMS"
@@ -72,8 +84,15 @@ body {
         "footer footer";
     grid-gap: 20px;
 }
+
+.containerMeals img {
+  width: 100%;
+  height: auto;
+}
+
 .header h1 {
   margin-top: 120px;
+  font-size: 60px;
 }
 /* Contact page */
 .formContact {
@@ -83,12 +102,16 @@ body {
 .containerContact {
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: 0.5fr 4fr 0.5fr;
+    grid-template-rows: 0.5fr 2fr 0.2fr;
     grid-template-areas:
         "header header"
         "formContact formContact"
         "footer footer";
     grid-gap: 20px;
+}
+
+.containerContact h1 {
+  font-size: 32px;
 }
 
 form {
@@ -202,7 +225,7 @@ textarea{
 .header .show-menu {
     text-decoration: none;
     color: #fff;
-    background: #FF5035;
+    background: #8b1a1a;
     text-align: center;
     padding: 10px 0;
     display: none;
@@ -224,18 +247,6 @@ textarea{
     .header {
 	height: auto;
     }
-
-    /* Change grid */ /*change for responsive design*/
-  /*.container {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-areas:
-            "header"
-            "main"
-	    "sidebar"
-            "footer";
-	grid-gap: 20px;
-    }*/
 
     /*Make dropdown links appear inline*/
     .header ul {
@@ -259,6 +270,19 @@ textarea{
 /* Grid box for meals */
 .sidebarDish {
   grid-area: sidebarDish;
+  font-size: 26px;
+  margin: 0px;
+}
+
+.sidebarDish ul {
+  margin: 0px;
+  border: 6px solid grey;
+  border-radius: 2px;
+}
+
+.sidebarDish p {
+  margin: 0px;
+  text-decoration: underline;
 }
 
 .pictureDish{
@@ -267,13 +291,14 @@ textarea{
 
 .textDish {
   grid-area: textDish;
-  text-align: center;
+  text-align: left;
+  font-size: 24px;
 }
 
 .containerDish {
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 0.2fr 0.2fr;
     grid-template-areas:
         "header header"
         "pictureDish sidebarDish"
@@ -281,3 +306,66 @@ textarea{
         "footer footer";
     grid-gap: 20px;
 }
+
+/* Caption sizes */
+.caption caption {
+  font-size: 25px;
+}
+
+#soups {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: 0.5fr 0.75fr 1fr 0.2fr 0.2fr;
+      grid-template-areas:
+          "header header"
+          "leftTopMS rightTopMS"
+          "centerBottomMS centerBottomMS"
+          "textMeals textMeals"
+          "footer footer";
+      grid-gap: 20px;
+  }
+
+  #soups .centerBottomMS {
+    justify-self: center;
+    align-self: center;
+  }
+
+  @media screen and (max-width : 1200px){
+    .containerMeals {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+              "header"
+              "leftTopMS"
+              "rightTopMS"
+              "centerBottomMS"
+              "textMeals"
+              "footer";
+    grid-gap: 20px;
+      }
+
+    .containerIndex{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+              "header"
+              "leftSide"
+              "rightSide"
+              "textHome"
+              "footer";
+    grid-gap: 20px;
+      }
+
+    .containerDish{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+              "header"
+              "pictureDish"
+              "sidebarDish"
+              "textDish"
+              "footer";
+      grid-gap: 20px;
+      }
+
+  }
